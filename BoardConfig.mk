@@ -111,14 +111,14 @@ TW_NO_LEGACY_PROPS := true
 TW_INCLUDE_LIBRESETPROP := true
 
 # A14+ Enhancements
-TW_USE_FSCRYPT_V2 := true
-TW_INCLUDE_REPACKTOOLS := true
-TW_SUPPORTS_FBE_V2 := true
+#TW_USE_FSCRYPT_V2 := true
+#TW_INCLUDE_REPACKTOOLS := true
+#TW_SUPPORTS_FBE_V2 := true
 
 # A15 (Speculative, adjust as needed)
-TW_USE_KEYMASTER_V5 := true  # Use V4 if V5 isn’t supported
-TW_INCLUDE_CRYPTO_FSCRYPT := true
-TW_EXCLUDE_ENCRYPTED_BACKUPS := true
+#TW_USE_KEYMASTER_V5 := true  # Use V4 if V5 isn’t supported
+#TW_INCLUDE_CRYPTO_FSCRYPT := true
+#TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 
 # AVB  -  added
 BOARD_AVB_ENABLE := true
