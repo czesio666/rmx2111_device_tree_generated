@@ -160,3 +160,13 @@ TW_DEFAULT_BRIGHTNESS := 1200
 TW_Y_OFFSET := 80
 TW_H_OFFSET := -80
 TW_OZIP_DECRYPT_KEY := 0000
+
+# TWRP Configuration stock blank screen fix - added
+# Graphics Fixes
+TW_USE_COMPATIBLE_FRAMEBUFFER := true
+TW_NO_SCREEN_TIMEOUT := true
+TW_ROTATION := 0
+TW_INCLUDE_FBDEV := true
+
+# TWRP log errors in /tmp/recovery.log - added
+TW_LOG_ERRORS := true
