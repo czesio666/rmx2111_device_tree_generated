@@ -99,7 +99,26 @@ BOARD_USES_METADATA_PARTITION := true
 BOARD_ROOT_EXTRA_FOLDERS += metadata
 
 # Crypto  -  added
+# Basic Crypto Support
 TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_CRYPTO_USE_SYSTEM_VOLD := true
+
+# A13+ Compatibility
+TW_USE_KEYMASTER_V4 := true
+TW_NO_LEGACY_PROPS := true
+TW_INCLUDE_LIBRESETPROP := true
+
+# A14+ Enhancements
+TW_USE_FSCRYPT_V2 := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_SUPPORTS_FBE_V2 := true
+
+# A15 (Speculative, adjust as needed)
+TW_USE_KEYMASTER_V5 := true  # Use V4 if V5 isn’t supported
+TW_INCLUDE_CRYPTO_FSCRYPT := true
+TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 
 # AVB  -  added
 BOARD_AVB_ENABLE := true
@@ -111,6 +130,7 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+
 # Workaround for error copying vendor files to recovery ramdisk  -  added
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
