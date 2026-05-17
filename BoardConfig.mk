@@ -156,9 +156,9 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_NTFS_3G := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
-TW_DEFAULT_BRIGHTNESS := 1200
-TW_Y_OFFSET := 80
-TW_H_OFFSET := -80
+TW_DEFAULT_BRIGHTNESS := 1024                   # default 1200
+TW_Y_OFFSET := 0      #80
+TW_H_OFFSET := 0      #-80
 TW_OZIP_DECRYPT_KEY := 0000
 
 # TWRP Configuration stock blank screen fix - added
@@ -170,3 +170,7 @@ TW_INCLUDE_FBDEV := true
 
 # TWRP log errors in /tmp/recovery.log - added
 TW_LOG_ERRORS := true
+
+# === MT6853 Specific Fixes ===
+TARGET_USES_HWC2 := true
+TW_NO_FASTBOOT_BOOT := true
