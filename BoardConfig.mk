@@ -174,3 +174,12 @@ TW_LOG_ERRORS := true
 # === MT6853 Specific Fixes ===
 TARGET_USES_HWC2 := true
 TW_NO_FASTBOOT_BOOT := true
+
+# Hardware GUI Control (przyciski Vol + Power)
+OF_USE_HW_GUI_CONTROLS := true
+OF_HW_GUI_CONTROLS := true          # flag new name
+TW_SUPPORT_USB_MOUSE := true
+
+# 
+TW_NO_REBOOT_BOOTLOADER := false
+TW_NO_REBOOT_RECOVERY := false
