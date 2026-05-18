@@ -11,4 +11,10 @@ ifeq ($(TARGET_DEVICE),RMX2111)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
 
-chmod 755 /recovery/root/auto_reboot.sh
+# === Auto Reboot to System Script ===
+$(TARGET_RECOVERY_ROOT_OUT)/auto_reboot.sh: $(LOCAL_PATH)/recovery/root/auto_reboot.sh
+    $(hide) mkdir -p $(dir $@)
+    $(hide) cp -f $< $@
+    $(hide) chmod 755 $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(TARGET_RECOVERY_ROOT_OUT)/auto_reboot.sh
