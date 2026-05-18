@@ -8,6 +8,20 @@ on fs && property:ro.debuggable=0
     # set charging free due to it wait for USB activation
     start adbd
 
+ # Backlight fix
+    chmod 0664 /sys/class/leds/lcd-backlight/brightness
+    chown system system /sys/class/leds/lcd-backlight/brightness
+    write /sys/class/leds/lcd-backlight/brightness 1024
+
+    # Touch panel fix (Realme 7 5G focaltech)
+    write /proc/touchscreen/ts_resume 1
+    write /sys/class/touchscreen/ftxxxx/ts_fw_upgrade 0
+    chmod 0666 /proc/touchscreen/*
+    chmod 0666 /sys/class/touchscreen/*/*
+
+    # Additional display init
+    write /sys/class/graphics/fb0/blank 0
+
 on post-fs
     # Support A/B feature for EMMC and UFS boot region
     wait /dev/block/mmcblk0boot0 2
