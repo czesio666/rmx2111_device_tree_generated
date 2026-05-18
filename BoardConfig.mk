@@ -183,3 +183,8 @@ TW_SUPPORT_USB_MOUSE := true
 # 
 TW_NO_REBOOT_BOOTLOADER := false
 TW_NO_REBOOT_RECOVERY := false
+
+# 2. ADB Shell + Fox Binary (dla broken display)
+OF_ADB_SHELL := true                # włącza pełny ADB Shell
+FOX_USE_FOX_BINARIES := true        # włącza fox binary (dodatkowe narzędzia)
+TW_FORCE_USE_OLD_ADB := true
