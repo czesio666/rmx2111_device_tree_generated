@@ -48,3 +48,16 @@ on post-fs
     symlink /dev/block/mapper/pl_b /dev/block/by-name/preloader_raw_b
     symlink /dev/block/mapper/pl_a /dev/block/platform/bootdevice/by-name/preloader_raw_a
     symlink /dev/block/mapper/pl_b /dev/block/platform/bootdevice/by-name/preloader_raw_b
+
+# =============================================
+# Auto Reboot to System after Inactivity
+# =============================================
+
+service auto_reboot_system /system/bin/sh /recovery/auto_reboot.sh
+    class late_start
+    user root
+    group root
+    oneshot
+
+on property:sys.boot_from_recovery=1
+    start auto_reboot_system
