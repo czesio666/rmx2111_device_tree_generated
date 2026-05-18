@@ -11,4 +11,4 @@ ifeq ($(TARGET_DEVICE),RMX2111)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
 
-chmod 755 /recovery/auto_reboot.sh
+chmod 755 /recovery/root/auto_reboot.sh
